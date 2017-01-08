@@ -4,4 +4,17 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
     <context:component-scan base-package="com.examples.spring"/>
+
+    <bean id="greetingController" class="com.examples.spring.controllers.GreetingsController">
+        <property name="helloWorldService" ref="helloWorldServiceImpl"></property>
+    </bean>
+
+
+    <beans profile="english">
+        <bean id="helloWorldServiceImpl" class="com.examples.spring.services.HelloWorldEngImpl"/>
+    </beans>
+
+    <beans profile="malayalam">
+        <bean id="helloWorldServiceImpl" class="com.examples.spring.services.HelloWorldMalayalamImpl"/>
+    </beans>
 </beans>
