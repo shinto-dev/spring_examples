@@ -18,6 +18,6 @@ public class HelloWorldMalayalamImpl implements HelloWorldService {
 
     @Override
     public String getGreetings() {
-        return "Ente Lokame";
+        return "Malayalam Hello World!!";
     }
 }
